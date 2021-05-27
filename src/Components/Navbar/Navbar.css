@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  padding: 2%;
+  background: #f8f8f8;
+}
+
+input {
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0px 5px;
+  border-radius: 5px;
+}
+
+.btn-view-all-pages {
+  background-color: rgb(45, 45, 201);
+  color: white;
+  font-size: 13px;
+}
+.btn-view-documentation {
+  background: rgb(226, 225, 225);
+  color: rgb(44, 44, 184);
+  font-size: 13px;
+}
