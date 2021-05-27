@@ -15,7 +15,9 @@ function FormData() {
       ...displayData,
       {
         name: formData.name,
-        mobile: formData.mobile,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
         image: formData.image,
       },
     ]);
@@ -40,11 +42,38 @@ function FormData() {
             }));
           }}
         />
+
+        <input
+          className="form-input"
+          type="email"
+          name="email"
+          placeholder="email"
+          onChange={(e) => {
+            e.persist();
+            setFormData((prevUser) => ({
+              ...prevUser,
+              [e.target.name]: e.target.value,
+            }));
+          }}
+        />
         <input
           className="form-input"
           type="text"
-          name="mobile"
-          placeholder="mobile"
+          name="phone"
+          placeholder="phone"
+          onChange={(e) => {
+            e.persist();
+            setFormData((prevUser) => ({
+              ...prevUser,
+              [e.target.name]: e.target.value,
+            }));
+          }}
+        />
+        <input
+          className="form-input"
+          type="text"
+          name="address"
+          placeholder="address"
           onChange={(e) => {
             e.persist();
             setFormData((prevUser) => ({
@@ -83,13 +112,17 @@ function FormData() {
           <table>
             <tr>
               <th>Name</th>
-              <th>Mobile</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Address</th>
               <th>Image</th>
             </tr>
             {displayData.map((d) => (
               <tr>
                 <td>{d.name}</td>
-                <td>{d.mobile}</td>
+                <td>{d.email}</td>
+                <td>{d.phone}</td>
+                <td>{d.address}</td>
                 <td>
                   <img className="form-image" src={d.image} alt="" srcset="" />
                 </td>
